@@ -60,6 +60,8 @@ def app(df, x, y):
         Gambar di atas adalah bunga Iris *Iris-virginica*, yang merupakan salah satu spesies bunga Iris dalam dataset.
         Bunga ini memiliki ciri khas seperti kelopak bunga yang lebih besar dan lebih lebar dibandingkan dengan spesies lainnya.
         """)
+    else:
+        st.error(f"Gambar tidak ditemukan di path: {image_path}")
 
         
         
