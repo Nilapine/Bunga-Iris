@@ -53,7 +53,6 @@ def app(df, x, y):
     
     if os.path.exists(image_path):
         # Jika file gambar ada, tampilkan gambar
-        img = mpimg.imread(image_path)
         st.image(img, caption="Iris Virginica", use_column_width=True)
         
         # Menampilkan penjelasan gambar di bawah gambar
