@@ -48,20 +48,17 @@ def app(df, x, y):
     # Menambahkan bagian untuk menampilkan gambar dari direktori
     st.subheader("Tampilkan Gambar dari Direktori")
     
-    # Path gambar yang ingin ditampilkan
-    image_url = 'https://github.com/Nilapine/Bunga-Iris/blob/main/media/virginica.jpg'  # Ganti dengan path gambar yang diinginkan
-    
-    # Debug: Memastikan apakah file gambar ada
-    if os.path.exists(image_url):
-        st.write(f"Gambar ditemukan di url: {image_url}")
-        # Menampilkan gambar menggunakan Streamlit
-        st.image(image_url, caption="Iris Virginica", use_column_width=True)
-        
-        # Menampilkan penjelasan gambar di bawah gambar
-        st.markdown("""
-        Gambar di atas adalah bunga Iris *Iris-virginica*, yang merupakan salah satu spesies bunga Iris dalam dataset.
-        Bunga ini memiliki ciri khas seperti kelopak bunga yang lebih besar dan lebih lebar dibandingkan dengan spesies lainnya.
-        """)
+    # URL gambar dari GitHub
+    image_url = 'https://github.com/Nilapine/Bunga-Iris/blob/main/media/virginica.jpg'
+
+    # Menampilkan gambar dari URL
+    st.image(image_url, caption="Iris Virginica", use_column_width=True)
+
+    # Menampilkan penjelasan gambar di bawah gambar
+    st.markdown("""
+    Gambar di atas adalah bunga Iris *Iris-virginica*, yang merupakan salah satu spesies bunga Iris dalam dataset.
+    Bunga ini memiliki ciri khas seperti kelopak bunga yang lebih besar dan lebih lebar dibandingkan dengan spesies lainnya.
+    """)
     else:
         st.write(f"Gambar TIDAK ditemukan di url: {image_url}")
         st.error(f"Gambar tidak ditemukan di url: {image_url}")
