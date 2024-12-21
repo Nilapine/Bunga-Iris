@@ -59,11 +59,15 @@ def app(df, x, y):
             score = score
             st.info("Prediksi Sukses....")
 
-            if(prediction == "Iris-setosa"):
-                st.success("Termasuk kedalam Iris jenis Setosa")
-            elif(prediction == "Iris-versicolor"):
-                st.success("Termasuk kedalam Iris jenis Versi Color")
-            elif(prediction == "Iris-virginica"):
-                st.success("Termasuk kedalam Iris jenis Virginica")
+        if prediction == "Iris-setosa":
+            st.success("Termasuk kedalam Iris jenis Setosa")
+            st.image("https://cdn.popmama.com/content-images/community/20230530/community-0ffa74b95b5ebdb3eca2a0e6e6573e0b.png?1685458076", caption="Iris-setosa", use_column_width=True)
+        elif prediction == "Iris-versicolor":
+            st.success("Termasuk kedalam Iris jenis Versicolor")
+            st.image("https://cdn.popmama.com/content-images/community/20230530/community-14ba4def1a1a159e46112067b7f801f5.png?1685458076", caption="Iris-versicolor", use_column_width=True)
+        elif prediction == "Iris-virginica":
+            st.success("Termasuk kedalam Iris jenis Virginica")
+            st.image("https://cdn.popmama.com/content-images/community/20230530/community-58bdaacae45cf8668bd65cd7a028b123.png?1685458076", caption="Iris-virginica", use_column_width=True)
+
 
             st.write("Model yang digunakan memiliki tingkat akurasi ", (score*100), "%")
