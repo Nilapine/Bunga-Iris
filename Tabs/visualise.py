@@ -63,8 +63,8 @@ def app(df, x, y):
         Bunga ini memiliki ciri khas seperti kelopak bunga yang lebih besar dan lebih lebar dibandingkan dengan spesies lainnya.
         """)
     else:
-        st.write(f"Gambar TIDAK ditemukan di path: {image_url}")
-        st.error(f"Gambar tidak ditemukan di path: {image_url}")
+        st.write(f"Gambar TIDAK ditemukan di url: {image_url}")
+        st.error(f"Gambar tidak ditemukan di url: {image_url}")
 
         
         
