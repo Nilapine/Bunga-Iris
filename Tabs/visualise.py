@@ -1,5 +1,6 @@
 import warnings
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 import seaborn as sns
 from sklearn import tree
 import streamlit as st
@@ -42,6 +43,22 @@ def app(df, x, y):
 
     4. **Klasifikasi visual**: Gambar ini memberikan indikasi seberapa mudah atau sulit spesies bunga dapat diklasifikasikan berdasarkan fitur tertentu. Beberapa pasangan fitur memperlihatkan pemisahan yang lebih jelas antar spesies, sedangkan beberapa pasangan lainnya menunjukkan tumpang tindih yang lebih besar.
     """)
+
+    # Menambahkan bagian untuk menampilkan gambar dari direktori
+    st.subheader("Tampilan Bunga")
+    
+    # Pilih file gambar dari direktori lokal
+    image_path = st.text_input("Masukkan path gambar yang ingin ditampilkan", "")
+    
+    if image_path and os.path.exists(image_path):
+        # Jika file gambar ada, tampilkan gambar
+        img = mpimg.imread(image_path)
+        st.image(img, caption="Gambar yang dipilih", use_column_width=True)
+        
+        # Menampilkan penjelasan gambar di bawah gambar
+        st.markdown("""
+        Gambar di atas adalah visualisasi yang diambil dari direktori Anda. Anda dapat mengganti gambar dengan memasukkan path yang sesuai.
+        """)
 
         
         
