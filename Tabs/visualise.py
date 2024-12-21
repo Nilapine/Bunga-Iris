@@ -47,6 +47,9 @@ def app(df, x, y):
 
     # Menambahkan bagian untuk menampilkan gambar dari direktori
     st.subheader("Visualisasi Gambar Iris")
+
+    # Menentukan lebar gambar dalam piksel
+    image_width = 300  # Sesuaikan nilai ini sesuai kebutuhan
     
     # Membuat tiga kolom dengan lebar yang sama
     col1, col2, col3 = st.columns(3)
