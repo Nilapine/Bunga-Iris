@@ -46,18 +46,25 @@ def app(df, x, y):
     """)
 
     # Menambahkan bagian untuk menampilkan gambar dari direktori
-    st.subheader("Tampilkan Gambar dari Direktori")
+    st.subheader("Visualisasi Gambar Iris")
     
-    # URL gambar dari GitHub
-    image_url = 'https://cdn.popmama.com/content-images/community/20230530/community-58bdaacae45cf8668bd65cd7a028b123.png?1685458076'
+    # Membuat tiga kolom dengan lebar yang sama
+    col1, col2, col3 = st.columns(3)
 
-    # Menampilkan gambar dari URL
-    st.image(image_url, caption="Iris Virginica", use_column_width=True)
+    # Menampilkan gambar di masing-masing kolom
+    with col1:
+        st.image('https://cdn.popmama.com/content-images/community/20230530/community-58bdaacae45cf8668bd65cd7a028b123.png?1685458076', caption='Iris Virginica', use_column_width=True)
+    with col2:
+        st.image('https://cdn.popmama.com/content-images/community/20230530/community-0ffa74b95b5ebdb3eca2a0e6e6573e0b.png?1685458076', caption='Iris Setosa', use_column_width=True)
+    with col3:
+        st.image('https://cdn.popmama.com/content-images/community/20230530/community-14ba4def1a1a159e46112067b7f801f5.png?1685458076', caption='Iris Versicolor', use_column_width=True)
 
-    # Menampilkan penjelasan gambar di bawah gambar
+    # Menambahkan penjelasan di bawah gambar
     st.markdown("""
-    Gambar di atas adalah bunga Iris *Iris-virginica*, yang merupakan salah satu spesies bunga Iris dalam dataset.
-    Bunga ini memiliki ciri khas seperti kelopak bunga yang lebih besar dan lebih lebar dibandingkan dengan spesies lainnya.
+    Gambar di atas menunjukkan tiga spesies bunga Iris:
+    - **Iris Virginica**: Dikenal dengan kelopak bunga yang lebih besar dan lebih lebar.
+    - **Iris Setosa**: Memiliki kelopak bunga yang lebih kecil dan lebih ramping.
+    - **Iris Versicolor**: Memiliki ciri khas warna kelopak yang lebih cerah dan lebih besar dibandingkan Setosa.
     """)
 
         
