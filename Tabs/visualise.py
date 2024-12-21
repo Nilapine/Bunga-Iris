@@ -45,19 +45,20 @@ def app(df, x, y):
     """)
 
     # Menambahkan bagian untuk menampilkan gambar dari direktori
-    st.subheader("Tampilan Bunga")
+    st.subheader("Tampilkan Gambar dari Direktori")
     
-    # Pilih file gambar dari direktori lokal
-    image_path = st.text_input("Masukkan path gambar yang ingin ditampilkan", "")
+    # Path gambar yang ingin ditampilkan
+    image_path = 'media/virginica.jpg'  # Ganti dengan path gambar yang diinginkan
     
-    if image_path and os.path.exists(image_path):
+    if os.path.exists(image_path):
         # Jika file gambar ada, tampilkan gambar
         img = mpimg.imread(image_path)
-        st.image(img, caption="Gambar yang dipilih", use_column_width=True)
+        st.image(img, caption="Iris Virginica", use_column_width=True)
         
         # Menampilkan penjelasan gambar di bawah gambar
         st.markdown("""
-        Gambar di atas adalah visualisasi yang diambil dari direktori Anda. Anda dapat mengganti gambar dengan memasukkan path yang sesuai.
+        Gambar di atas adalah bunga Iris *Iris-virginica*, yang merupakan salah satu spesies bunga Iris dalam dataset.
+        Bunga ini memiliki ciri khas seperti kelopak bunga yang lebih besar dan lebih lebar dibandingkan dengan spesies lainnya.
         """)
 
         
