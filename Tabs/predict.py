@@ -61,13 +61,15 @@ def app(df, x, y):
 
         if prediction == "Iris-setosa":
             st.success("Termasuk kedalam Iris jenis Setosa")
-            st.image("https://cdn.popmama.com/content-images/community/20230530/community-0ffa74b95b5ebdb3eca2a0e6e6573e0b.png?1685458076", caption="Iris-setosa", use_column_width=True)
+            st.image("https://i.etsystatic.com/20845839/r/il/86ac74/3108398608/il_fullxfull.3108398608_6l57.jpg", caption="Iris-setosa", use_column_width=True)
+            st.write("Iris setosa memiliki ciri khas berupa petal (kelopak bunga) yang kecil dan pendek dengan ukuran panjang petal sekitar 1,0–1,9 cm dan lebar 0,1–0,6 cm. Sepalnya (daun pelindung) relatif panjang dibandingkan petalnya.")
         elif prediction == "Iris-versicolor":
             st.success("Termasuk kedalam Iris jenis Versicolor")
-            st.image("https://cdn.popmama.com/content-images/community/20230530/community-14ba4def1a1a159e46112067b7f801f5.png?1685458076", caption="Iris-versicolor", use_column_width=True)
+            st.image("https://www.latour-marliac.com/3033-large_default/iris-versicolor-iris-versicolore.jpg", caption="Iris-versicolor", use_column_width=True)
+            st.write("Iris versicolor memiliki petal berukuran sedang, dengan panjang sekitar 3,0–5,1 cm dan lebar 1,0–1,8 cm. Warnanya cenderung ungu kebiruan dengan corak yang khas, dan biasanya tumbuh di tanah yang sedikit lebih kering dibandingkan habitat Iris setosa. Spesies ini memiliki petal berbentuk elips yang lebih lebar dibandingkan Iris setosa.")
         elif prediction == "Iris-virginica":
             st.success("Termasuk kedalam Iris jenis Virginica")
-            st.image("https://cdn.popmama.com/content-images/community/20230530/community-58bdaacae45cf8668bd65cd7a028b123.png?1685458076", caption="Iris-virginica", use_column_width=True)
-
+            st.image("https://daylily-phlox.eu/wp-content/uploads/2023/10/Iris-virginica-Pond-Crown-Point.jpg", caption="Iris-virginica", use_column_width=True)
+            st.write("Iris virginica adalah spesies dengan petal paling besar dan lebar di antara ketiganya, dengan panjang petal mencapai 4,5–6,9 cm dan lebar 1,2–2,5 cm. Warnanya bervariasi dari biru keunguan hingga ungu pekat, dengan ujung petal yang sedikit melengkung.")
 
             st.write("Model yang digunakan memiliki tingkat akurasi ", (score*100), "%")
