@@ -49,7 +49,7 @@ def app(df, x, y):
     st.subheader("Tampilkan Gambar dari Direktori")
     
     # Path gambar yang ingin ditampilkan
-    image_path = 'virginica.jpg'  # Ganti dengan path gambar yang diinginkan
+    image_path = './media/virginica.jpg'  # Ganti dengan path gambar yang diinginkan
     
     if os.path.exists(image_path):
         # Jika file gambar ada, tampilkan gambar
