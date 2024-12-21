@@ -49,13 +49,13 @@ def app(df, x, y):
     st.subheader("Tampilkan Gambar dari Direktori")
     
     # Path gambar yang ingin ditampilkan
-    image_path = 'https://github.com/Nilapine/Bunga-Iris/tree/main/media/virginica.jpg'  # Ganti dengan path gambar yang diinginkan
+    image_url = 'https://github.com/Nilapine/Bunga-Iris/blob/main/media/virginica.jpg'  # Ganti dengan path gambar yang diinginkan
     
     # Debug: Memastikan apakah file gambar ada
-    if os.path.exists(image_path):
-        st.write(f"Gambar ditemukan di path: {image_path}")
+    if os.path.exists(image_url):
+        st.write(f"Gambar ditemukan di url: {image_url}")
         # Menampilkan gambar menggunakan Streamlit
-        st.image(image_path, caption="Iris Virginica", use_column_width=True)
+        st.image(image_url, caption="Iris Virginica", use_column_width=True)
         
         # Menampilkan penjelasan gambar di bawah gambar
         st.markdown("""
@@ -63,8 +63,8 @@ def app(df, x, y):
         Bunga ini memiliki ciri khas seperti kelopak bunga yang lebih besar dan lebih lebar dibandingkan dengan spesies lainnya.
         """)
     else:
-        st.write(f"Gambar TIDAK ditemukan di path: {image_path}")
-        st.error(f"Gambar tidak ditemukan di path: {image_path}")
+        st.write(f"Gambar TIDAK ditemukan di path: {image_url}")
+        st.error(f"Gambar tidak ditemukan di path: {image_url}")
 
         
         
