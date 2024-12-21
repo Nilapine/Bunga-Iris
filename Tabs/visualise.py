@@ -30,11 +30,11 @@ def app(df, x, y):
     Gambar di atas adalah *pair plot*, yang merupakan visualisasi dari hubungan antar variabel pada dataset *Iris*. Berikut adalah penjelasan lebih lanjut:
 
     1. **Dataset Iris**: Dataset ini terdiri dari tiga spesies bunga Iris—*Iris-setosa* (biru), *Iris-versicolor* (oranye), dan *Iris-virginica* (hijau)—yang diklasifikasikan berdasarkan empat fitur:
-    - **SepalLengthCm**: Panjang kelopak bunga (sepal) dalam cm.
-    - **SepalWidthCm**: Lebar kelopak bunga dalam cm.
-    - **PetalLengthCm**: Panjang mahkota bunga (petal) dalam cm.
-    - **PetalWidthCm**: Lebar mahkota bunga dalam cm.
-    - **Id**: Indeks untuk identifikasi.
+      - **SepalLengthCm**: Panjang kelopak bunga (sepal) dalam cm.
+      - **SepalWidthCm**: Lebar kelopak bunga dalam cm.
+      - **PetalLengthCm**: Panjang mahkota bunga (petal) dalam cm.
+      - **PetalWidthCm**: Lebar mahkota bunga dalam cm.
+      - **Id**: Indeks untuk identifikasi.
 
     2. **Distribusi diagonal**: Di sepanjang diagonal, terlihat distribusi (plot densitas atau histogram) dari masing-masing fitur secara individu. Warna-warna pada distribusi ini mewakili spesies yang berbeda.
 
