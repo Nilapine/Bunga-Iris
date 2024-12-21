@@ -49,7 +49,7 @@ def app(df, x, y):
     st.subheader("Tampilkan Gambar dari Direktori")
     
     # URL gambar dari GitHub
-    image_url = 'https://github.com/Nilapine/Bunga-Iris/blob/main/media/virginica.jpg'
+    image_url = 'https://github.com/Nilapine/Bunga-Iris/tree/main/media/virginica.jpg'
 
     # Menampilkan gambar dari URL
     st.image(image_url, caption="Iris Virginica", use_column_width=True)
