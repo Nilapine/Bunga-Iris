@@ -6,6 +6,7 @@ from sklearn import tree
 import streamlit as st
 import numpy as np
 import pandas as pd
+import os
 
 from web_functions import train_model_DT,train_model_KNN,train_model_NBC,load_data
 
