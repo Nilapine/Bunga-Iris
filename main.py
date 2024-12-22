@@ -8,7 +8,7 @@ from Tabs import home, predict, visualise
 with st.sidebar:
     selected = option_menu (
         menu_title="Main Menu",
-        options=["Home": home,"Prediction" : predict, "Visualisation" : visualise,],
+        options=["Home","Prediction", "Visualisation"],
         default_index=0,
     )
 """
