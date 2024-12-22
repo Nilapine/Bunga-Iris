@@ -3,26 +3,6 @@ from web_functions import load_data
 from Tabs import home, predict, visualise
 
 
-st.markdown(f"""
-<style>
-    Tabs{{
-        onsubmit: "streamlit.button.click()";
-    }}
-    .navbar{{
-        padding-right: 10px;
-        padding-left: 30px;
-    }}
-    .navbar-brand img{{
-        max-height: 50px;
-    }}
-</style>
-<Tabs action="">
-    <nav class="navbar">
-        <a class="navbar-brand" href="#"></a>
-    </nav>
-</Tabs>
-""", unsafe_allow_html-true)
-
 #sidebar menu
 Tabs = {
     "Home": home,
