@@ -45,11 +45,6 @@ st.markdown("""
             text-align: center;  /* Center align the text */
             cursor: pointer;
         }
-        
-        /* Hover effect for tabs */
-        div[role='tablist'] > div:hover {
-            color: #5e1d99;  /* Darker purple on hover */
-        }
 
         /* Styling for active tab */
         div[role='tablist'] > div[aria-selected='true'] {
