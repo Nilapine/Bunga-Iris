@@ -10,9 +10,6 @@ Tabs = {
     "Visualisation" : visualise,
 }
 
-#membuat sidebar
-st.sidebar.title("Navigasi")
-
 #membuat radio option
 #page = st.sidebar.radio("Pages",list(Tabs.keys()))
 
