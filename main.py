@@ -11,7 +11,7 @@ Tabs = {
 
 #load dataset
 df,x,y = load_data()
-# Header with logo and menu
+# Header with text and menu
 title_container = st.container()
 
 # Add CSS for styling
@@ -29,15 +29,7 @@ st.markdown("""
             background-color: #f9f9f9;  /* Light background color */
         }
 
-        /* Styling for logo and text */
-        .header-logo {
-            display: flex;
-            align-items: center;
-        }
-        .header-logo img {
-            width: 50px;  /* Logo size */
-            margin-right: 10px;  /* Space between logo and text */
-        }
+        /* Styling for text */
         .header-text {
             font-family: 'Poppins', sans-serif;  /* Apply Poppins font */
             font-size: 24px;  /* Font size */
@@ -68,15 +60,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Create a container for logo and text on the left, and menu on the right
+# Create a container for text on the left, and menu on the right
 with title_container:
     st.markdown('<div class="header-container">', unsafe_allow_html=True)
     
-    # Left side: Logo and "Iris Predict"
-    st.markdown('<div class="header-logo">', unsafe_allow_html=True)
-    st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=50)
+    # Left side: "Iris Predict" text
     st.markdown('<span class="header-text">Iris Predict</span>', unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
 
     # Right side: Menu
     selected_tab = st.tabs(list(Tabs.keys()))
