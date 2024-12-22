@@ -1,24 +1,62 @@
 import streamlit as st
 from web_functions import load_data
 
+# Function to set background image
+def set_background_image(image_url):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("{image_url}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
 def app(df, x, y):
-    # Judul Halaman Aplikasi
+    # Set background image (flower image)
+    background_image_url = "https://images.squarespace-cdn.com/content/v1/61eeea89d60f57793d9e114b/1706854176756-Y4XKV9Q0OQ5F2C0ICPDI/iris%2Bsetosa%2B%25282%2529.jpg?format=1000w"  # Replace with actual image URL
+    set_background_image(background_image_url)
+    
+    # Center the button on the page
+    st.markdown(
+        """
+        <style>
+        .stButton>button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            padding: 15px 32px;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # Add a title for the application
     st.title("Aplikasi Prediksi Jenis Tanaman Iris")
     
-    # Menambahkan Button Start
+    # Show the "Start" button to move to the prediction page
     if st.button("Start"):
-        # Menu Prediction
+        # Transition to the prediction page
         st.subheader("Prediksi Jenis Tanaman Iris")
-        # Add any prediction logic here if needed
         
-        # Gambar Bunga Iris
+        # Display iris flower images
         st.image([
-            'https://images.squarespace-cdn.com/content/v1/61eeea89d60f57793d9e114b/1706854176756-Y4XKV9Q0OQ5F2C0ICPDI/iris%2Bsetosa%2B%25282%2529.jpg?format=1000w',  # Replace with the actual image URL
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAhHAQgQSBvRdWjZS3rp0wVvLum8zgHC0djx-rGJupnYYyKaGkMvGoQNTa3GV4FjBe8d0&usqp=CAU',  # Replace with the actual image URL
-            'https://daylily-phlox.eu/wp-content/uploads/2023/10/Iris-virginica-Pond-Crown-Point.jpg'   # Replace with the actual image URL
+            'https://images.squarespace-cdn.com/content/v1/61eeea89d60f57793d9e114b/1706854176756-Y4XKV9Q0OQ5F2C0ICPDI/iris%2Bsetosa%2B%25282%2529.jpg?format=1000w',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAhHAQgQSBvRdWjZS3rp0wVvLum8zgHC0djx-rGJupnYYyKaGkMvGoQNTa3GV4FjBe8d0&usqp=CAU',
+            'https://daylily-phlox.eu/wp-content/uploads/2023/10/Iris-virginica-Pond-Crown-Point.jpg'
         ], caption=["Iris Setosa", "Iris Versicolor", "Iris Virginica"], use_column_width=True)
-        
-        # Deskripsi tentang Bunga Iris
+
+        # Add description about the iris flowers
         st.subheader("Deskripsi Bunga Iris")
         st.write("""
             Bunga Iris adalah tanaman berbunga yang dikenal karena keindahannya.
@@ -26,8 +64,7 @@ def app(df, x, y):
             Tanaman ini tumbuh dengan daun sempit panjang dan bunga yang memiliki tiga kelopak.
             Iris sering ditemukan di habitat basah seperti rawa dan tepi danau.
         """)
-    
-    # Menampilkan Data Tanaman
-    df.drop('Id', axis=1)
-    st.write(df)
 
+    # Show the dataset (without the 'Id' column)
+    df.drop('Id', axis=1, inplace=True)
+    st.write(df)
