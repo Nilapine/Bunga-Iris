@@ -25,44 +25,62 @@ st.markdown("""
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;  /* Space below the header */
+            padding: 20px;
+            background-color: #f9f9f9;  /* Light background color */
         }
+
+        /* Styling for logo and text */
         .header-logo {
-            margin-right: 20px;  /* Space between logo and menu */
+            display: flex;
+            align-items: center;
+        }
+        .header-logo img {
+            width: 50px;  /* Logo size */
+            margin-right: 10px;  /* Space between logo and text */
+        }
+        .header-text {
+            font-family: 'Poppins', sans-serif;  /* Apply Poppins font */
+            font-size: 24px;  /* Font size */
+            font-weight: 600;  /* Bold font */
+            color: #800080;  /* Purple color */
         }
         
-        /* Styling for tabs and menu items */
+        /* Styling for menu items */
         div[role='tablist'] {
             display: flex;
-            justify-content: center;
-            font-family: 'Poppins', sans-serif;  /* Apply Poppins font to the entire tab list */
-            font-weight: 600;  /* Bold font weight */
+            justify-content: flex-end;  /* Align menu items to the right */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
         }
+
         div[role='tablist'] > div {
             color: #800080;  /* Purple color */
-            font-size: 16px;  /* Font size */
-            padding: 10px 20px;  /* Padding for spacing */
-            text-align: center;  /* Center align the text */
+            font-size: 16px;
+            padding: 12px 20px;  /* Padding for menu items */
             cursor: pointer;
         }
 
-        /* Styling for active tab */
+        /* Active tab styling */
         div[role='tablist'] > div[aria-selected='true'] {
             color: #5e1d99;  /* Darker purple for active tab */
-            font-weight: 700;  /* Bolder for active tab */
+            font-weight: 700;  /* Bold active tab */
         }
     </style>
 """, unsafe_allow_html=True)
 
-# Create a container for logo and tabs in one header
+# Create a container for logo and text on the left, and menu on the right
 with title_container:
     st.markdown('<div class="header-container">', unsafe_allow_html=True)
-    st.markdown('<div class="header-logo">', unsafe_allow_html=True)
-    st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=100)
-    st.markdown('</div>', unsafe_allow_html=True)
     
-    # Add the tabs in the header, to the right of the logo
+    # Left side: Logo and "Iris Predict"
+    st.markdown('<div class="header-logo">', unsafe_allow_html=True)
+    st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=50)
+    st.markdown('<span class="header-text">Iris Predict</span>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
+
+    # Right side: Menu
     selected_tab = st.tabs(list(Tabs.keys()))
+
     st.markdown('</div>', unsafe_allow_html=True)
     
 # Kondisi untuk menjalankan fungsi app di setiap tab
