@@ -1,7 +1,9 @@
 import streamlit as st
 from web_functions import load_data
 from Tabs import home, predict, visualise
+from streamlit_option_menu import option_menu
 
+"""
 # CSS untuk memodifikasi posisi elemen di sidebar
 def center_sidebar_menu():
     st.markdown(
@@ -21,14 +23,21 @@ def center_sidebar_menu():
 # Terapkan CSS untuk sidebar
 center_sidebar_menu()
 
-#sidebar menu
 
+#sidebar menu
 Tabs = {
     "Home": home,
     "Prediction" : predict,
     "Visualisation" : visualise,
 }
-
+"""
+#sidebar menu
+with st.sidebar:
+    selected =option_menu(
+        menu_title="Main Menu",
+        option=["Home","Prediction","Visualization"],
+        default_index=0,
+    )
 #membuat sidebar
 st.sidebar.title("Navigasi")
 
