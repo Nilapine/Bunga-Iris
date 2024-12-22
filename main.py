@@ -17,9 +17,9 @@ df,x,y = load_data()
 title_container = st.container()
 col1, col2 = title_container.columns([1, 5])
 with col1:
-    st.image("https://e7.pngegg.com/pngimages/868/873/png-clipart-flower-iris-flower-purple-blue.png", width=100)
+    st.image("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", width=100)
 with col2:
-    st.markdown("<h1 style='text-align: right;'>Navigasi</h1>", unsafe_allow_html=True)
+    selected_tab = st.tabs(list(Tabs.keys())) # Tabs are now within the second column
 
 # Membuat tab horizontal
 selected_tab = st.tabs(list(Tabs.keys()))
