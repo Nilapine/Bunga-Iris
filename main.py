@@ -19,15 +19,6 @@ st.markdown("""
     <style>
         /* Import Google Font for Poppins */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-        
-        /* Container for logo and menu aligned horizontally */
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f9f9f9;  /* Light background color */
-        }
 
         /* Styling for text */
         .header-text {
@@ -43,6 +34,7 @@ st.markdown("""
             justify-content: flex-end;  /* Align menu items to the right */
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
+            color: #5e1d99;  /* Darker purple for active tab */
         }
 
         div[role='tablist'] > div {
