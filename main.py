@@ -1,6 +1,8 @@
 import streamlit as st
 from web_functions import load_data
 from Tabs import home, predict, visualise
+from streamlit_navigation_bar import st_navbar
+import pages as pg
 
 
 #sidebar menu
