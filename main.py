@@ -14,9 +14,9 @@ df,x,y = load_data()
 
 # Header dengan logo dan judul
 title_container = st.container()
-col1, col2 = title_container.columns([1, 5])
+col1, col2 = title_container.columns([5,1])
 with col1:
-    st.image("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", width=100)
+    st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=100)
 with col2:
     selected_tab = st.tabs(list(Tabs.keys())) # Tabs are now within the second column
 
