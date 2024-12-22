@@ -31,23 +31,29 @@ st.markdown("""
             margin-right: 20px;  /* Space between logo and menu */
         }
         
-        /* Tabs styling */
+        /* Style tabs and menu items */
         div[role='tablist'] {
             display: flex;
             justify-content: center;
+            font-family: 'Poppins', sans-serif;  /* Apply Poppins font to the entire tab list */
+            font-weight: 600;  /* Bold font weight */
         }
         div[role='tablist'] > div {
-            margin-right: 20px;  /* Space between individual tabs */
-            font-family: 'Poppins', sans-serif;  /* Apply Poppins font */
-            font-weight: 600;  /* Bold font weight */
             color: #800080;  /* Purple color */
             font-size: 16px;  /* Font size */
             text-align: center;  /* Center align the text */
+            padding: 10px 20px;  /* Add padding for spacing */
         }
         
         /* Hover effect for tabs */
         div[role='tablist'] > div:hover {
             color: #5e1d99;  /* Darker purple on hover */
+        }
+
+        /* Styling for active tab */
+        div[role='tablist'] > div[aria-selected='true'] {
+            color: #5e1d99;  /* Darker purple for active tab */
+            font-weight: 700;  /* Bolder for active tab */
         }
     </style>
 """, unsafe_allow_html=True)
