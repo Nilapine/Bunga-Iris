@@ -5,20 +5,12 @@ from web_functions import load_data
 from Tabs import home, predict, visualise
 
 #sidebar menu
-with st.sidebar:
-    selected = option_menu (
-        menu_title="Main Menu",
-        options=["Home","Prediction", "Visualisation"],
-        default_index=0,
-    )
-"""
-#horizontal menu
+
 Tabs = {
     "Home": home,
     "Prediction" : predict,
     "Visualisation" : visualise,
 }
-"""
 
 #membuat sidebar
 st.sidebar.title("Navigasi")
