@@ -31,7 +31,7 @@ st.markdown("""
             margin-right: 20px;  /* Space between logo and menu */
         }
         
-        /* Style tabs and menu items */
+        /* Styling for tabs and menu items */
         div[role='tablist'] {
             display: flex;
             justify-content: center;
@@ -41,8 +41,9 @@ st.markdown("""
         div[role='tablist'] > div {
             color: #800080;  /* Purple color */
             font-size: 16px;  /* Font size */
+            padding: 10px 20px;  /* Padding for spacing */
             text-align: center;  /* Center align the text */
-            padding: 10px 20px;  /* Add padding for spacing */
+            cursor: pointer;
         }
         
         /* Hover effect for tabs */
@@ -65,7 +66,7 @@ with title_container:
     st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=100)
     st.markdown('</div>', unsafe_allow_html=True)
     
-    # Add the tabs below the image, in the same header section
+    # Add the tabs in the header, to the right of the logo
     selected_tab = st.tabs(list(Tabs.keys()))
     st.markdown('</div>', unsafe_allow_html=True)
     
