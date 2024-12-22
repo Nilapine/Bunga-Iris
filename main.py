@@ -5,49 +5,37 @@ from Tabs import home, predict, visualise
 # Sidebar menu
 Tabs = {
     "Home": home,
-    "Prediction": predict,
-    "Visualisation": visualise,
+    "Prediction" : predict,
+    "Visualisation" : visualise,
 }
 
 # Load dataset
 df, x, y = load_data()
 
-# Header with logo and menu
+# Header with logo and title
 title_container = st.container()
-
-# Add CSS for styling
-st.markdown("""
+col1, col2 = title_container.columns([1, 5])
+with col1:
+    st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=100)
+with col2:
+    # Align tabs in the center and add margin to increase spacing between menu items
+    st.markdown("""
     <style>
-        /* Container for logo and menu aligned horizontally */
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;  /* Space below the header */
-        }
-        .header-logo {
-            margin-right: 20px;  /* Space between logo and menu */
-        }
         div[role='tablist'] {
-            display: flex;
             justify-content: center;
+            margin-bottom: 20px;  /* Increase spacing between the tabs */
         }
         div[role='tablist'] > div {
-            margin-right: 20px;  /* Space between individual tabs */
+            margin-right: 30px;  /* Increase space between individual tabs */
+        }
+        .css-ffhzg2 {
+            margin-bottom: 40px;  /* Additional bottom margin if needed */
         }
     </style>
-""", unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-# Create a container for logo and tabs in one header
-with title_container:
-    st.markdown('<div class="header-container">', unsafe_allow_html=True)
-    st.markdown('<div class="header-logo">', unsafe_allow_html=True)
-    st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=100)
-    st.markdown('</div>', unsafe_allow_html=True)
-    
-    # Add the tabs below the image, in the same header section
+    # Use st.tabs for the tab menu
     selected_tab = st.tabs(list(Tabs.keys()))
-    st.markdown('</div>', unsafe_allow_html=True)
 
 # Run the app functionality for each selected tab
 for i, tab in enumerate(selected_tab):
