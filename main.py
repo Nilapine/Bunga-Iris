@@ -6,7 +6,7 @@ import pages as pg
 
 # *** IMPORTED NAVIGATION BAR
 st.set_page_config(initial_sidebar_state="collapsed")
-pages = ["Home", "Prediction", "Visualisation"]
+Tabs = ["Home", "Prediction", "Visualisation"]
 parent_dir = os.path.dirname(os.path.abspath(__file__))
 logo_path = os.path.join(
     parent_dir, "https://daylily-phlox.eu/wp-content/uploads/2023/10/Iris-virginica-Pond-Crown-Point.jpg")
