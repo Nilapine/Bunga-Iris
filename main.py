@@ -2,16 +2,13 @@ import streamlit as st
 from web_functions import load_data
 from Tabs import home, predict, visualise
 
-# CSS untuk memposisikan sidebar menu di tengah
-def sidebar_center_style():
+# CSS untuk memodifikasi posisi elemen di sidebar
+def center_sidebar_menu():
     st.markdown(
         """
         <style>
-        /* Mengatur posisi sidebar menu */
-        .block-container {
-            padding-top: 2rem;
-        }
-        .css-1y4p8pa {
+        /* Memusatkan elemen sidebar */
+        section[data-testid="stSidebar"] .css-ng1t4o { 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,7 +19,7 @@ def sidebar_center_style():
     )
 
 # Terapkan CSS untuk sidebar
-sidebar_center_style()
+center_sidebar_menu()
 
 #sidebar menu
 
