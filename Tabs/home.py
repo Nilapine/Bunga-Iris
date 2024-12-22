@@ -1,33 +1,13 @@
 import streamlit as st
 from web_functions import load_data
 
-# Function to set background image (scrap paper motif)
-def set_background_image(image_url):
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("{image_url}");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
 def app(df, x, y):
     # Add a large horizontal image of the Iris flower at the bottom of the page
     st.image(
-        'https://example.com/large-iris-image.jpg',  # Replace with your actual large horizontal iris image URL
+        'https://asset.kompas.com/crops/pBgd0CVrw5satlJj1P_ud_0EAoM=/0x0:1000x667/1200x800/data/photo/2022/10/30/635db6ae22aa4.jpg',  # Replace with your actual large horizontal iris image URL
         caption="Iris Flower - Horizontal",
         use_column_width=True  # Make the image stretch across the full width of the page
     )
-    
-    # Set background image (scrap paper motif)
-    scrap_paper_image_url = "https://www.freepik.com/free-vector/crumpled-paper-texture_9701046.htm"  # Replace with scrap paper image URL
-    set_background_image(scrap_paper_image_url)
     
     # Center the content and add padding
     st.markdown(
