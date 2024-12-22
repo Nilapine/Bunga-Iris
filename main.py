@@ -19,31 +19,31 @@ st.markdown("""
     <style>
         /* Import Google Font for Poppins */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-        
-        /* Container for header */
+
+        /* Container for header with text and menu */
         .header-container {
             display: flex;
-            justify-content: center;  /* Center align the header content */
             align-items: center;
+            justify-content: center;  /* Center the content */
             padding: 20px;
+            margin-bottom: 20px;  /* Space below the header */
         }
 
-        /* Styling for text */
+        /* Styling for the text "Iris Predict" */
         .header-text {
             font-family: 'Poppins', sans-serif;  /* Apply Poppins font */
-            font-size: 24px;  /* Font size */
+            font-size: 20px;  /* Font size */
             font-weight: 600;  /* Bold font */
             color: #800080;  /* Purple color */
-            margin-right: 20px;  /* Space between text and menu */
+            margin-right: 70px;  /* Space between text and menu */
         }
-        
+
         /* Styling for menu items */
         div[role='tablist'] {
             display: flex;
             justify-content: center;  /* Center align the menu items */
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            margin: 0;  /* Remove any default margins */
         }
 
         div[role='tablist'] > div {
@@ -59,14 +59,10 @@ st.markdown("""
             font-weight: 700;  /* Bold active tab */
         }
 
-        /* Remove background from tabs */
-        div[role='tablist'] {
-            background-color: transparent !important;
-        }
     </style>
 """, unsafe_allow_html=True)
 
-# Create a container for text on the left, and menu on the right
+# Create a container for text and menu aligned on the same line
 with title_container:
     st.markdown('<div class="header-container">', unsafe_allow_html=True)
     
