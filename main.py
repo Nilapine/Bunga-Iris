@@ -11,7 +11,9 @@ Tabs = {
 
 #load dataset
 df,x,y = load_data()
-# Header with text and menu
+
+
+# Header with custom navigation menu
 title_container = st.container()
 
 # Add CSS for styling
@@ -32,33 +34,37 @@ st.markdown("""
         /* Styling for the text "Iris Predict" */
         .header-text {
             font-family: 'Poppins', sans-serif;  /* Apply Poppins font */
-            font-size: 20px;  /* Font size */
+            font-size: 24px;  /* Font size */
             font-weight: 600;  /* Bold font */
             color: #800080;  /* Purple color */
-            margin-right: 70px;  /* Space between text and menu */
+            margin-right: 50px;  /* Space between text and menu */
         }
 
         /* Styling for menu items */
-        div[role='tablist'] {
-            display: flex;
-            justify-content: center;  /* Center align the menu items */
+        .menu-button {
             font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
-
-        div[role='tablist'] > div {
-            color: #800080;  /* Purple color for inactive menu items */
             font-size: 16px;
-            padding: 12px 20px;  /* Padding for menu items */
+            font-weight: 600;
+            color: #800080;
+            padding: 10px 20px;
             cursor: pointer;
+            border: 2px solid #800080;
+            background-color: transparent;
+            margin-right: 20px;
+            border-radius: 5px;
         }
 
-        /* Active tab styling */
-        div[role='tablist'] > div[aria-selected='true'] {
-            color: #5e1d99;  /* Darker purple for active tab */
-            font-weight: 700;  /* Bold active tab */
+        .menu-button:hover {
+            background-color: #800080;
+            color: white;
         }
 
+        /* Active button styling */
+        .active-button {
+            background-color: #800080;
+            color: white;
+            font-weight: 700;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -69,13 +75,18 @@ with title_container:
     # Left side: "Iris Predict" text
     st.markdown('<span class="header-text">Iris Predict</span>', unsafe_allow_html=True)
 
-    # Right side: Menu
-    selected_tab = st.tabs(list(Tabs.keys()))
-
-    st.markdown('</div>', unsafe_allow_html=True)
+    # Right side: Custom Menu Buttons
+    # Create buttons to switch between pages
+    home_button = st.button("Home", key="home", help="Go to the Home page")
+    prediction_button = st.button("Prediction", key="prediction", help="Go to the Prediction page")
+    visualisation_button = st.button("Visualisation", key="visualisation", help="Go to the Visualisation page")
     
-# Kondisi untuk menjalankan fungsi app di setiap tab
-for i, tab in enumerate(selected_tab):
-    with tab:
-        page_name = list(Tabs.keys())[i]
-        Tabs[page_name].app(df, x, y)
+    st.markdown('</div>', unsafe_allow_html=True)
+
+# Action for menu buttons
+if home_button:
+    Tabs["Home"].app(df, x, y)
+elif prediction_button:
+    Tabs["Prediction"].app(df, x, y)
+elif visualisation_button:
+    Tabs["Visualisation"].app(df, x, y)
