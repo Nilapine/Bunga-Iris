@@ -40,17 +40,18 @@ def app(df, x, y):
     # Display iris flower images in columns (side by side) with same size
     col1, col2, col3 = st.columns(3)
     
-    # Set image width and height to ensure all images are the same size
-    image_size = (300, 300)  # Adjust the size of the images (width, height)
+    # Set a fixed size for all images to make them uniform
+    image_width = 350  # Fixed width for each image
+    image_height = 350  # Fixed height for each image
     
     with col1:
-        st.image('https://images.squarespace-cdn.com/content/v1/61eeea89d60f57793d9e114b/1706854176756-Y4XKV9Q0OQ5F2C0ICPDI/iris%2Bsetosa%2B%25282%2529.jpg?format=1000w', caption="Iris Setosa", use_column_width=True)
+        st.image('https://images.squarespace-cdn.com/content/v1/61eeea89d60f57793d9e114b/1706854176756-Y4XKV9Q0OQ5F2C0ICPDI/iris%2Bsetosa%2B%25282%2529.jpg?format=1000w', caption="Iris Setosa", width=image_width, height=image_height)
     
     with col2:
-        st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAhHAQgQSBvRdWjZS3rp0wVvLum8zgHC0djx-rGJupnYYyKaGkMvGoQNTa3GV4FjBe8d0&usqp=CAU', caption="Iris Versicolor", width=image_size[0], height=image_size[1])
+        st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAhHAQgQSBvRdWjZS3rp0wVvLum8zgHC0djx-rGJupnYYyKaGkMvGoQNTa3GV4FjBe8d0&usqp=CAU', caption="Iris Versicolor", width=image_width, height=image_height)
     
     with col3:
-        st.image('https://daylily-phlox.eu/wp-content/uploads/2023/10/Iris-virginica-Pond-Crown-Point.jpg', caption="Iris Virginica", width=image_size[0], height=image_size[1])
+        st.image('https://daylily-phlox.eu/wp-content/uploads/2023/10/Iris-virginica-Pond-Crown-Point.jpg', caption="Iris Virginica", width=image_width, height=image_height)
 
     # Add description about the iris flowers
     st.subheader("Deskripsi Bunga Iris")
