@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 # CSS untuk memodifikasi posisi elemen di sidebar
 def center_sidebar_menu():
     st.markdown(
-        """
+        
         <style>
         /* Memusatkan elemen sidebar */
         section[data-testid="stSidebar"] .css-ng1t4o { 
@@ -16,14 +16,11 @@ def center_sidebar_menu():
             align-items: center;
         }
         </style>
-        """,
+        ,
         unsafe_allow_html=True,
     )
-
 # Terapkan CSS untuk sidebar
 center_sidebar_menu()
-
-
 #sidebar menu
 Tabs = {
     "Home": home,
