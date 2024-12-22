@@ -12,7 +12,6 @@ Tabs = {
 #load dataset
 df,x,y = load_data()
 
-
 # Header with custom navigation menu
 title_container = st.container()
 
@@ -40,30 +39,20 @@ st.markdown("""
             margin-right: 50px;  /* Space between text and menu */
         }
 
-        /* Styling for menu items */
-        .menu-button {
+        /* Styling for the navigation menu (no border or background) */
+        .menu-item {
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
             font-weight: 600;
             color: #800080;
-            padding: 10px 20px;
+            text-decoration: none;  /* Remove underline */
+            margin-right: 30px;  /* Space between menu items */
             cursor: pointer;
-            border: 2px solid #800080;
-            background-color: transparent;
-            margin-right: 20px;
-            border-radius: 5px;
         }
 
-        .menu-button:hover {
-            background-color: #800080;
-            color: white;
-        }
-
-        /* Active button styling */
-        .active-button {
-            background-color: #800080;
-            color: white;
-            font-weight: 700;
+        /* Hover effect for menu items */
+        .menu-item:hover {
+            color: #5e1d99;  /* Darker purple for hover effect */
         }
     </style>
 """, unsafe_allow_html=True)
@@ -75,18 +64,22 @@ with title_container:
     # Left side: "Iris Predict" text
     st.markdown('<span class="header-text">Iris Predict</span>', unsafe_allow_html=True)
 
-    # Right side: Custom Menu Buttons
-    # Create buttons to switch between pages
-    home_button = st.button("Home", key="home", help="Go to the Home page")
-    prediction_button = st.button("Prediction", key="prediction", help="Go to the Prediction page")
-    visualisation_button = st.button("Visualisation", key="visualisation", help="Go to the Visualisation page")
-    
+    # Right side: Custom Menu Items (no border, styled text links)
+    st.markdown('<a href="#" class="menu-item" id="home-link">Home</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#" class="menu-item" id="prediction-link">Prediction</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#" class="menu-item" id="visualisation-link">Visualisation</a>', unsafe_allow_html=True)
+
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Action for menu buttons
-if home_button:
+# Action for clicking on the menu items
+home_button = st.session_state.get('home_button', False)
+prediction_button = st.session_state.get('prediction_button', False)
+visualisation_button = st.session_state.get('visualisation_button', False)
+
+# Use JavaScript to trigger action when the menu items are clicked
+if 'home-button' in st.session_state:
     Tabs["Home"].app(df, x, y)
-elif prediction_button:
+elif 'prediction-button' in st.session_state:
     Tabs["Prediction"].app(df, x, y)
-elif visualisation_button:
+elif 'visualisation-button' in st.session_state:
     Tabs["Visualisation"].app(df, x, y)
