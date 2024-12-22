@@ -42,18 +42,18 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Container for header
+# Create a flex container for logo and tabs
 with title_container:
-    # Create a container to center align the logo and title
+    # Create a container for logo and tabs aligned horizontally
     st.markdown('<div class="header-container">', unsafe_allow_html=True)
     st.markdown('<div class="header-logo">', unsafe_allow_html=True)
     st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=100)
     st.markdown('</div>', unsafe_allow_html=True)
-    st.markdown('<div class="header-title">Your App Title</div>', unsafe_allow_html=True)
+    
+    # Add the tabs below the image
+    selected_tab = st.tabs(list(Tabs.keys()))
     st.markdown('</div>', unsafe_allow_html=True)
     
-    selected_tab = st.tabs(list(Tabs.keys()))  #Use st.tabs for the tab menu
-
 # Kondisi untuk menjalankan fungsi app di setiap tab
 for i, tab in enumerate(selected_tab):
     with tab:
