@@ -21,6 +21,7 @@ st.markdown(f"""
         <a class="navbar-brand" href="#"></a>
     </nav>
 </Tabs>
+""", unsafe_allow_html-true)
 
 #sidebar menu
 Tabs = {
