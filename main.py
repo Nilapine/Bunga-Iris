@@ -19,6 +19,14 @@ st.markdown("""
     <style>
         /* Import Google Font for Poppins */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        
+        /* Container for header */
+        .header-container {
+            display: flex;
+            justify-content: center;  /* Center align the header content */
+            align-items: center;
+            padding: 20px;
+        }
 
         /* Styling for text */
         .header-text {
@@ -26,19 +34,20 @@ st.markdown("""
             font-size: 24px;  /* Font size */
             font-weight: 600;  /* Bold font */
             color: #800080;  /* Purple color */
+            margin-right: 20px;  /* Space between text and menu */
         }
         
         /* Styling for menu items */
         div[role='tablist'] {
             display: flex;
-            justify-content: flex-end;  /* Align menu items to the right */
+            justify-content: center;  /* Center align the menu items */
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            color: #5e1d99;  /* Darker purple for active tab */
+            margin: 0;  /* Remove any default margins */
         }
 
         div[role='tablist'] > div {
-            color: #800080;  /* Purple color */
+            color: #800080;  /* Purple color for inactive menu items */
             font-size: 16px;
             padding: 12px 20px;  /* Padding for menu items */
             cursor: pointer;
@@ -48,6 +57,11 @@ st.markdown("""
         div[role='tablist'] > div[aria-selected='true'] {
             color: #5e1d99;  /* Darker purple for active tab */
             font-weight: 700;  /* Bold active tab */
+        }
+
+        /* Remove background from tabs */
+        div[role='tablist'] {
+            background-color: transparent !important;
         }
     </style>
 """, unsafe_allow_html=True)
