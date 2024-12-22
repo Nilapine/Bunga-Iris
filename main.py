@@ -18,8 +18,7 @@ col1, col2 = title_container.columns([1, 5])
 with col1:
     st.image("https://png.pngtree.com/png-vector/20240528/ourmid/pngtree-blue-and-purple-iris-flower-png-image_12520393.png", width=100)
 with col2:
-    st.markdown("<h1 style='text-align: right;'></h1>", unsafe_allow_html=True)  # Title aligned right
-    selected_tab = st.tabs(list(Tabs.keys())) # Tabs are now within the second column
+    selected_tab = st.selectbox("", list(Tabs.keys()), index=0)  # Use selectbox for better alignment
 
 # Kondisi untuk menjalankan fungsi app di setiap tab
 for i, tab in enumerate(selected_tab):
