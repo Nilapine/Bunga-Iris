@@ -1,40 +1,34 @@
 import streamlit as st
 from web_functions import load_data
 from Tabs import home, predict, visualise
-from streamlit_option_menu import option_menu
 
-"""
-# CSS untuk memodifikasi posisi elemen di sidebar
-def center_sidebar_menu():
-    st.markdown(
-        
-        <style>
-        /* Memusatkan elemen sidebar */
-        section[data-testid="stSidebar"] .css-ng1t4o { 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        </style>
-        ,
-        unsafe_allow_html=True,
-    )
-# Terapkan CSS untuk sidebar
-center_sidebar_menu()
+
+st.markdown(f"""
+<style>
+    Tabs{{
+        onsubmit: "streamlit.button.click()";
+    }}
+    .navbar{{
+        padding-right: 10px;
+        padding-left: 30px;
+    }}
+    .navbar-brand img{{
+        max-height: 50px;
+    }}
+</style>
+<Tabs action="">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#"></a>
+    </nav>
+</Tabs>
+
 #sidebar menu
 Tabs = {
     "Home": home,
     "Prediction" : predict,
     "Visualisation" : visualise,
 }
-"""
-#sidebar menu
-with st.sidebar:
-    selected =option_menu(
-        menu_title="Main Menu",
-        option=["Home","Prediction","Visualization"],
-        default_index=0,
-    )
+
 #membuat sidebar
 st.sidebar.title("Navigasi")
 
