@@ -12,6 +12,10 @@ Tabs = {
 #load dataset
 df,x,y = load_data()
 
+# Initialize session state if it doesn't exist
+if 'active_page' not in st.session_state:
+    st.session_state.active_page = 'Home'  # Default to 'Home'
+
 # Header with custom navigation menu
 title_container = st.container()
 
@@ -65,21 +69,16 @@ with title_container:
     st.markdown('<span class="header-text">Iris Predict</span>', unsafe_allow_html=True)
 
     # Right side: Custom Menu Items (no border, styled text links)
-    st.markdown('<a href="#" class="menu-item" id="home-link">Home</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#" class="menu-item" id="prediction-link">Prediction</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#" class="menu-item" id="visualisation-link">Visualisation</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#" class="menu-item" id="home-link" onclick="window.location.reload();">Home</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#" class="menu-item" id="prediction-link" onclick="window.location.reload();">Prediction</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#" class="menu-item" id="visualisation-link" onclick="window.location.reload();">Visualisation</a>', unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Action for clicking on the menu items
-home_button = st.session_state.get('home_button', False)
-prediction_button = st.session_state.get('prediction_button', False)
-visualisation_button = st.session_state.get('visualisation_button', False)
-
-# Use JavaScript to trigger action when the menu items are clicked
-if 'home-button' in st.session_state:
+# Change the active page when the user clicks a menu item
+if 'Home' in st.session_state.active_page:
     Tabs["Home"].app(df, x, y)
-elif 'prediction-button' in st.session_state:
+elif 'Prediction' in st.session_state.active_page:
     Tabs["Prediction"].app(df, x, y)
-elif 'visualisation-button' in st.session_state:
+elif 'Visualisation' in st.session_state.active_page:
     Tabs["Visualisation"].app(df, x, y)
