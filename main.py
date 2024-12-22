@@ -11,13 +11,15 @@ Tabs = {
 
 #load dataset
 df,x,y = load_data()
-
 # Header with logo and menu
 title_container = st.container()
 
 # Add CSS for styling
 st.markdown("""
     <style>
+        /* Import Google Font for Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        
         /* Container for logo and menu aligned horizontally */
         .header-container {
             display: flex;
@@ -28,12 +30,24 @@ st.markdown("""
         .header-logo {
             margin-right: 20px;  /* Space between logo and menu */
         }
+        
+        /* Tabs styling */
         div[role='tablist'] {
             display: flex;
             justify-content: center;
         }
         div[role='tablist'] > div {
             margin-right: 20px;  /* Space between individual tabs */
+            font-family: 'Poppins', sans-serif;  /* Apply Poppins font */
+            font-weight: 600;  /* Bold font weight */
+            color: #800080;  /* Purple color */
+            font-size: 16px;  /* Font size */
+            text-align: center;  /* Center align the text */
+        }
+        
+        /* Hover effect for tabs */
+        div[role='tablist'] > div:hover {
+            color: #5e1d99;  /* Darker purple on hover */
         }
     </style>
 """, unsafe_allow_html=True)
