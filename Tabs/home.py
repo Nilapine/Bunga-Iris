@@ -53,3 +53,9 @@ def app(df, x, y):
     df.drop('Id', axis=1, inplace=True)
     st.write(df)
 
+# Run the app functionality for each selected tab
+for i, tab in enumerate(selected_tab):
+    with tab:
+        page_name = list(Tabs.keys())[i]
+        Tabs[page_name].app(df, x, y)
+
