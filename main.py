@@ -37,7 +37,10 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-    
+
+# Create a container for logo and tabs in one header
+with title_container:
+    st.markdown('<div class="header-container">', unsafe_allow_html=True)
     # Add the tabs below the image, in the same header section
     selected_tab = st.tabs(list(Tabs.keys()))
     st.markdown('</div>', unsafe_allow_html=True)
