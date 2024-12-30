@@ -46,7 +46,6 @@ with title_container:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Run the app functionality for each selected tab
-for i, tab in enumerate(selected_tab):
-    with tab:
-        page_name = list(Tabs.keys())[i]
+for i, page_name in enumerate(Tabs.keys()):
+    with selected_tab[i]:
         Tabs[page_name].app(df, x, y)
