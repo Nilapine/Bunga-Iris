@@ -45,7 +45,9 @@ with title_container:
     selected_tab = st.tabs(list(Tabs.keys()))
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Run the app functionality for each selected tab
-for i, page_name in enumerate(Tabs.keys()):
-    with selected_tab[i]:
-        Tabs[page_name].app(df, x, y)
+df,x,y = load_data()
+#kondisi call app function
+if page in ["Prediction","Visualisation"]:
+    Tabs[page].app(df,x,y)
+else:
+    Tabs[page].app(df,x,y) # type: ignore
