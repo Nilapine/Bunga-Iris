@@ -7,7 +7,7 @@ def app(df, x, y):
         """
         <style>
         .stApp {
-            background-image: url("https://github.com/Nilapine/Iris/blob/main/background.png");
+            background-image: url("https://github.com/Nilapine/Iris/blob/main/background.png?raw=true");
             background-size: cover;
             background-repeat: no-repeat;
         }
