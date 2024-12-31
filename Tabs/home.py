@@ -2,20 +2,6 @@ import streamlit as st
 from web_functions import load_data
 
 def app(df, x, y):
-    # Menambahkan Gambar Latar Belakang
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background-image: url("https://github.com/Nilapine/Iris/blob/main/background.png?raw=true");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
     # Judul Halaman Aplikasi
     st.title("Aplikasi Prediksi Jenis Tanaman Iris")
 
